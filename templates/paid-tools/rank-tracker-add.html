@@ -1,0 +1,20 @@
+{% extends 'tools-main.html' %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<h1>Add project</h1>
+	<form method="post" onsubmit="return match_pass()">
+		<p>Enter project name:</p>
+		<input type="text" name="project" id="project" required></input>
+		<p>Enter domain:</p>
+		<input type="url" name="domain" id="domain" required></input>
+		<p>Enter keywords:</p>
+		<textarea name="keyword_data" id="add-project" placeholder="Enter 1 keyword per line with keyword, SV, competition and tag. i.e. football;100;0.1;sports"></textarea>
+	<input type="submit" value="Add project" id="add-project-button">
+	</form>
+{% endblock %}

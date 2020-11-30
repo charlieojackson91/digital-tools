@@ -1,0 +1,19 @@
+{% extends 'tools-main.html' %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<h1>Are you sure you want to delete this project?</h1>
+	<h3>Take a copy of keyword rankings before deleting</h3>
+	<p>Are you sure you want to delete: <span style="color: red;">{{client_name}} </span> </p>
+	<form method='post'>
+		<input type="hidden" name="project_id" value="{{project_id}}">
+		<input type="submit" value="Delete" name="delete" id="delete-project">
+	</form>
+	
+{% endblock %}

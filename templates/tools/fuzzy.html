@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block content %}
+	<ul class="second_nav">
+		<li><a href="#faq1"># Whats fuzzy look up for</a></li> 
+		<li><a href="#faq2"># How to use fuzzy look up</a></li>
+	</ul>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	
+	<h1>Fuzzy look up</h1>
+	<form method="post">
+		<textarea rows="4" cols="50" id="keys" placeholder="Enter pre migration urls" name="pre-urls"></textarea>
+		<textarea rows="4" cols="50" id="keys" placeholder="Enter post migration urls" name="post-urls"></textarea>
+		<textarea rows="4" cols="50" id="keys" placeholder="Output is here">{% for match in fuzzy %}{{match}}{% endfor %}</textarea>
+		<input type="submit" value="Match!">
+	</form>
+	<div class="merge_content">
+		<h2 id="faq1">Whats fuzzy look up for</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+		<h2 id="faq2">How to use fuzzy look up</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+	</div>
+	
+
+{% endblock %}

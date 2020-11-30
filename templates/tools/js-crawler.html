@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% block content %}
+	<ul class="second_nav">
+		<li><a href="#faq1"># What is a JavaScript crawler</a></li> 
+		<li><a href="#faq2"># How to use a JavaScript crawler</a></li>
+	</ul>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+			<h1>JavaScript crawler</h1>
+			<form method="post">
+				<input type="text" name="url" placeholder="Enter domain" id="crawl_area">
+				<input type="submit" value="Find" id="crawl_button">
+			</form>
+			{% if jscrawl %}
+				<table>
+					<tr>
+						<th>URL's identified</th>
+					</tr>
+					{% for urls in jscrawl %}
+					<tr>
+						<td><a href="{{urls}}" target="_blank">{{urls}}</a></td>
+					</tr>
+					{% endfor %}
+				</table>
+				{% endif %}
+			{% if bad_url %}
+				<p><span style="font-size: 20px;">{{bad_url}}</span></p>
+			{% endif %}
+	<div class="merge_content">
+		<h2 id="faq1">Whats is a JavaScript crawler</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+		<h2 id="faq2">How to use a JavaScript crawler</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+	</div>
+	
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% block content %}
+	<ul class="second_nav">
+		<li><a href="#faq1"># Whats a rank tracker for</a></li> 
+		<li><a href="#faq2"># How to use a rank tracker</a></li>
+	</ul>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<h1>Rank tracker</h1>
+	<form method="post">
+		<input type="text" name="keyword" placeholder="Enter keyword" id="crawl_area">
+		<input type="submit" value="Get rankings" id="crawl_button">
+	</form>
+	{% if rankings %}
+		<table>
+			<tr>
+				<th>Position</th>
+				<th>URL</th>
+			</tr>
+		{% set count = 1 %}
+		{% for ranking in rankings %}
+			{% set count = count + 1 %}
+			<tr>
+				<td>{{count}}</td>
+				<td><a href="{{ranking}}" target="_blank">{{ranking}}</a></td>
+			</tr>
+				
+			{% endfor %}
+		</table>
+	{% endif %}
+	<div class="merge_content">
+		<h2 id="faq1">Whats a rank tracker for</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+		<h2 id="faq2">How to use a rank tracker</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+	</div>
+	
+
+{% endblock %}

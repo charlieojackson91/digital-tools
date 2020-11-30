@@ -1,0 +1,32 @@
+{% extends 'tools-main.html' %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<h1>Delete project</h1>
+	{% if data %}
+		<table>
+			<tr>
+				<th>Project</th>
+				<th>Domain</th>
+				<th>Delete</th>
+			</tr>
+		{% for project in data %}
+			<tr>
+				<td>{{project[1]}}</td>
+				<td>{{project[2]}}</td>
+				<td><a href="confirm-delete?project_id={{project[0]}}">Delete</a></td>
+			</tr>
+		{% endfor %}
+		</table>
+	{% else %}
+		<p>You currently have no projects. Set up a <a href="http://178.128.43.72/seo-tools/ultimate-rank-tracker/add-project">new project</a> to get started.</p>
+	{% endif %}
+	
+
+{% endblock %}

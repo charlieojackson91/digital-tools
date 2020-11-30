@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	<title>Tools dev site</title>
+	<meta name="description" content="My test site">
+	<link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static',filename='js/bootstrap.min.js') }}" rel="stylesheet">
+	<script type="text/javascript" src="{{ url_for('static',filename='js/main.js') }}"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+	<div class="all_body">
+	<header>
+		<nav class="primary_nav">
+			{% if session['logged_in'] == True %}
+				<a href="/seo-tools" class="nav_left">SEO tools</a>
+				<a href="/knowlegde-hub" class="nav_left">Knowledge hub</a>
+				<a href="/logout" class="nav_right">Logout</a>
+			{% else %}
+				<a href="/seo-tools" class="nav_left">SEO tools</a>
+				<a href="/knowlegde-hub" class="nav_left">Knowledge hub</a>
+				<a href="/register" class="nav_right">Register</a>
+				<a href="/sign-in" class="nav_right">Sign in</a>
+			{% endif %}
+		</nav>
+	</header>
+	
+	<div class="clear"></div>
+	<div class="tool-dash">
+			<aside class="tool-nav">
+			<h3>Ranking tool dashboard</h3>
+			<h4><a href="http://digital-tools.co.uk/seo-tools/ultimate-rank-tracker">Projects</a></h4>
+			{% if session['projects'] %}
+				<ul>
+				{% for project in session['projects'] %}
+					<a href="http://digital-tools.co.uk/seo-tools/ultimate-rank-tracker?project_id={{project[0]}}"><li>{{project[1]}}</li></a>
+				{% endfor %}
+				</ul>
+			{% else %}
+			<p><a href="http://digital-tools.co.uk/seo-tools/ultimate-rank-tracker/add-project">Create your first project!</a></p>
+			{% endif %}
+			
+			<h4>Amend</h4>
+			<ul>
+				<a href="http://digital-tools.co.uk/seo-tools/ultimate-rank-tracker/add-project" id="selected"><li>Add project </li></a>
+				<a href="http://digital-tools.co.uk/ultimate-rank-tracker/delete-project" id="selected"><li>Delete project</li></a>
+			</ul>
+			<h4>API</h4>
+			<ul>
+				<a href="#" id="selected"><li>Documentation </li></a>
+				<a href="#" id="selected"><li>Examples</li></a>
+			</ul>
+		</aside>
+		
+		<div class='tool-container'>
+			{% block content %}
+			{% endblock %}
+		</div>
+	</div>
+	</div>
+	<div class="clear"></div>
+	<footer>
+		<div class="bottom_foot_left">
+			<h4> Still not found what you'r looking for? Perhaps these might help:</h4>
+			<a href="/sitemap" >Sitemap</a>
+			<a href="/contact" >Get in contact</a>
+		</div>
+		
+	</footer>
+</body>
+
+</html>

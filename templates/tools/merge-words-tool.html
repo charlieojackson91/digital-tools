@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+	<ul class="second_nav">
+		<li><a href="#faq1"># Whats merge words for</a></li> 
+		<li><a href="#faq2"># How to use merge words</a></li>
+	</ul>
+	<h1>Merge words</h1>
+	
+	<p>Enter keywords into the three boxes below and merge!</p>
+	
+	<form>
+			<textarea rows="4" cols="50" id="merge1"></textarea>
+			<textarea rows="4" cols="50" id="merge2"></textarea>
+			<textarea rows="4" cols="50" id="merge3"></textarea>
+			<span id="merge-words" onclick="merge_words()">Merge!</span>
+		<textarea rows="4" cols="50" id="merge-output" placeholder="Output is here"></textarea>
+	</form>
+	
+	<div class="merge_content">
+		<h2 id="faq1">Whats merge words for</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+		<h2 id="faq2">How to use merge words</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+	</div>
+	
+
+{% endblock %}

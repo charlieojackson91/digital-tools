@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+	<ul class="second_nav">
+		<li><a href="#faq1"># What is web crawling</a></li> 
+		<li><a href="#faq2"># How to use web crawling</a></li>
+	</ul>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+			<h1>Word to HTML</h1>
+			<form method="post" enctype="multipart/form-data">
+				<input type="file" name="file">
+				<input type="submit" value="Upload">
+			</form>
+	
+
+{% endblock %}

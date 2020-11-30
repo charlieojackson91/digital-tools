@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	{{error}}
+	{% if session['username']%}
+		<p>You are currently logged in as: <span id="user">{{ session['username'] }}</span></p>
+		<p>Not <span id="user">{{ session['username'] }}</span>? <a href="logout">Please logout</a></p>
+	{% endif %}
+	<div class="registration-signin">
+		<h1>Sign in</h1>
+		
+		<form method="post">
+			<p>Enter email:</p>
+			<input type="email" name="email" id="email" required></input>
+			<p>Enter password:</p>
+			<input type="password" name="password" id="password" required></input>
+			<input type="submit" value="Sign in">
+			
+		</form>
+	</div>
+{% endblock %}

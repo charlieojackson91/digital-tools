@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	<title>Charlie Jackson dev site</title>
+	<meta name="description" content="My test site">
+	<link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static',filename='js/bootstrap.min.js') }}" rel="stylesheet">
+	<link href="{{ url_for('static',filename='favicon.ico') }}" rel="shortcut icon">
+	<script type="text/javascript" src="{{ url_for('static',filename='js/main.js') }}"></script>
+</head>
+
+<div class="all_body">
+	<header>
+		<nav class="primary_nav">
+			<a href="/" class="nav_left">Home</a>
+			<a href="/seo-tools" class="nav_left">SEO tools</a>
+			<a href="/programming-tutorials" class="nav_left"> Python programming tutorials</a>
+			<a href="/knowlegde-hub" class="nav_left">Learn</a>
+			<a href="/register" class="nav_right">Register</a>
+			<a href="/sign-in" class="nav_right">Sign in</a>
+		</nav>
+	</header>
+	
+	<div class="clear"></div>
+	<div class='container-2-cols'>
+		<div class="container-1">
+		{% block content %}
+		{% endblock %}
+		</div>
+	</div>
+	</div>
+
+	<footer>
+		<div class="bottom_foot_left">
+			<h4> Still not found what you'r looking for? Perhaps these might help:</h4>
+			<a href="/sitemap" >Sitemap</a>
+			<a href="/contact" >Get in contact</a>
+			<a href="/support-the-content" >Support the content</a>
+			<a href="/about-me" >About me</a>
+			
+		</div>
+		
+	</footer>
+</body>
+
+</html>

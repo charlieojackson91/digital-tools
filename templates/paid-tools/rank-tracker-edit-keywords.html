@@ -1,0 +1,23 @@
+{% extends 'tools-main.html' %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<h1>Edit keyword</h1>
+	<form method='post'>
+		<p>Keyword:</p>
+		<input type="text" name="keyword" value="{{data[1]}}">
+		<p>Search volume:</p>
+		<input type="text" name="search_volume" value="{{data[2]}}">
+		<p>Competition:</p>
+		<input type="text" name="competition" value="{{data[3]}}">
+		<p>Tag:</p>
+		<input type="text" name="tag" value="{{data[5]}}">
+		<input type="hidden" name="key_id" value="{{data[0]}}">
+		<input type="submit" value="Edit" name="delete" id="delete-project">
+	</form>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'tools-main.html' %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<h1>Keywords</h1>
+
+	{% if keyword_set %}
+	{% include 'ranking-nav.html' %}
+		<table>
+			<tr>
+				<th>Key ID</th>
+				<th>Keyword</th>
+				<th>Search Volume</th>
+				<th>Competition</th>
+				<th>Tag</th>
+				<th>Edit / Delete</th>
+			</tr>
+		{% for data in keyword_set %}
+				<tr>
+					<td>{{data[0]}}</td>
+					<td>{{data[1]}}</td>
+					<td>{{data[2]}}</td>
+					<td>{{data[3]}}</td>
+					<td>{{data[4]}}</td>
+					<td><a href="http://digital-tools.co.uk/seo-tools/ultimate-rank-tracker/edit?project_id={{data[5]}}&key_id={{data[0]}}">Edit</a> <a href="http://digital-tools.co.uk/seo-tools/ultimate-rank-tracker/delete?project_id={{data[5]}}&key_id={{data[0]}}">/ Delete</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+		
+	{% endif %}
+	
+	
+
+{% endblock %}

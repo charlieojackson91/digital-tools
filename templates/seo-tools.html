@@ -1,0 +1,69 @@
+{% extends 'main.html' %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<h1>Free SEO tools</h1>
+	
+	<div class="tools-directory">
+		<h2>Keyword research</h2>
+		<ul>
+			{% for t in FREE_TOOLS['Keyword Research'] %}
+				<a href="{{t[1]}}"><li>{{t[0]}}</li></a>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div class="tools-directory">
+		<h2>Web crawling</h2>
+		<ul>
+			{% for t in FREE_TOOLS['Web crawling'] %}
+				<a href="{{t[1]}}"><li>{{t[0]}}</li></a>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div class="tools-directory">
+		<h2>Forecast tool</h2>
+		<ul>
+			{% for t in FREE_TOOLS['Forecast tool'] %}
+				<a href="{{t[1]}}"><li>{{t[0]}}</li></a>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div class="tools-directory">
+		<h2>Migration tool</h2>
+		<ul>
+			{% for t in FREE_TOOLS['Migration tool'] %}
+				<a href="{{t[1]}}"><li>{{t[0]}}</li></a>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div class="tools-directory">
+		<h2>Content management</h2>
+		<ul>
+			{% for t in FREE_TOOLS['Content management'] %}
+				<a href="{{t[1]}}"><li>{{t[0]}}</li></a>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	{% if PAID_TOOLS %}
+		<h1>Paid SEO tools</h1>
+		<h2>Web crawling</h2>
+		<div class="tools-directory">
+			<ul>
+				{% for t in PAID_TOOLS['Web Crawling'] %}
+					<a href="{{t[1]}}"><li>{{t[0]}}</li></a>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+{% endblock %}

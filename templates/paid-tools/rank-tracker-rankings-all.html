@@ -1,0 +1,37 @@
+{% extends 'tools-main.html' %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<h1>All ranking data</h1>
+	{% include 'ranking-nav.html' %}
+
+	{% if rankings %}
+		<table>
+			<tr>
+				<th>Keyword</th>
+				<th>Search volume</th>
+				<th>Position</th>
+				<th>Estimated traffic</th>
+				<th>URL</th>
+				<th>Date</th>
+			</tr>
+		{% for ranking in rankings %}
+			<tr>
+				<td><a href="https://www.google.co.uk/search?q={{ranking[0]}}" target="_blank">{{ranking[0]}}</a></td>
+				<td>{{ranking[4]}}</td>
+				<td>{{ranking[1]}}</td>
+				<td>{{ranking[2]}}</td>
+				<td>{{ranking[3]}}</td>
+				<td>{{ranking[5]}}</td>
+			</tr>
+		{% endfor%}
+		</table>
+	{% endif %}
+	
+{% endblock %}

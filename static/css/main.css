@@ -1,0 +1,479 @@
+
+/* GENERAL MAINTENANCE */
+html, body{
+	height: 100%;
+}
+
+#logo {
+	width: 65px;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	margin: 0;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+	text-decoration: underline;
+	color: black;
+	/*TODO: add a color so the user can see there is a link there*/
+}
+
+a:focus{
+	color: #cc8400;
+}
+a:active{
+	color: #cc8400;
+}
+
+a:hover{
+	color: #cc8400;
+}
+
+h2,h3{
+	color: #cc8400;
+}
+
+h1 {
+	color: #363636;
+}
+
+/* USER */
+#user{
+	font-size: 110%;
+	color: #cc8400;
+}
+
+/* HEADER */
+header{
+	background-color: #363636;
+	width: 100%;
+	min-height: 70px;
+	box-shadow: 1px 1px 2px grey;
+}
+
+
+
+/* NAVIGATION */
+.primary_nav {
+	display: inline-block;
+	width: 70%;
+	margin: 0 13%;	
+}
+
+.primary_nav a {
+	padding: 25px 35px;
+	color: #ffffff;
+	font-size: 16px;
+	float: left;
+	font-weight: bold;
+	transition-duration: 0.2s;
+}
+
+
+.primary_nav a:hover{
+	color: #cc8400;
+	background-color: #232f2f;
+}
+
+.primary_nav a:focus{
+	color: #cc8400;
+	text-decoration: underline;
+	background-color: #232f2f;
+	border: 1px solid black;
+}
+
+.clear{
+	clear: both;
+}
+
+/* SECONDARY NAV*/
+.second_nav li{
+	display: inline;
+	margin: 0 20px;
+	text-decoration: underline;
+}
+
+.second_nav{
+	padding: 0px;
+	margin: 0px;
+}
+
+.second_nav li:nth-child(1){
+	margin-left: 0px;
+}
+
+
+/* MAIN BODY */
+.all_body{
+	min-height: 100%;
+}
+
+.container {
+	width: 70%;
+	padding: 20px;
+	padding-bottom: 150px;
+	margin: 10px 13%;
+	display: inline-block;
+	border-radius: 10px;
+	overflow: auto;
+}
+
+/* MAIN BODY - TOOL SUITE*/
+
+.tool-dash{
+	width: 100%;
+	min-height: 1400px;
+	position: relative;
+}
+
+.tool-container{
+	width: 75%;
+	position:absolute;
+	left: 19%;
+	top: 0;
+	padding: 10px 20px;
+	border-radius: 5px;
+    background-color: #f2f2f2;
+	border: 0.5px solid grey;
+}
+
+.tool-nav{
+	width: 15%;
+	background-color: blue;
+	padding: 10px 20px;
+	border-radius: 5px;
+    background-color: #f2f2f2;
+	margin: 10px;
+	border: 0.5px solid grey;
+}
+
+/* FORMS */
+.registration-signin{
+	padding: 10px;
+	border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+.registration-signin input[type=submit] {
+    background-color: #cc8400;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	display: inline-block;
+	width: 10%;
+	min-width: 100px;
+	margin-top: 20px;
+	font-size: 110%
+}
+
+input[type=submit]:hover {
+    background-color: white;
+	color: #cc8400;
+	cursor: pointer;
+}
+
+
+#add-project{
+	width: 90%;
+	margin: 0px;
+}
+#add-project-button{
+	width: 20%;
+	min-width:150px;
+	background-color: #cc8400;
+	color: white;
+	padding: 10px 0px;
+}
+
+#add-project-button:hover{
+	background-color: white;
+	color: #cc8400;
+}
+
+.date-form{
+	width: 300px;
+	padding-top: 10px;
+}
+
+/* TOOLS BODY */
+.container h1{
+	margin-top: 40px;	
+}
+
+.tools-directory{
+	background-color: rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	width: 40%;
+	height: 200px;
+	margin: 10px;
+	margin-left: 0px;
+	padding: 0px 10px;
+	box-shadow: 1px 1px 2px grey;
+	transition-duration: 0.2s;
+	border-radius: 10px;
+}
+
+.tools-directory:hover{
+	box-shadow: 2px 2px 2px grey;
+	background-color: rgba(0, 0, 0,0.05);
+}
+
+/* TUTORIALS BODY */
+.container-2-cols{
+	width: 87%;
+	padding-bottom: 150px;
+	margin: 10px 0px;
+	margin-left: 13%;
+	display: inline-block;
+	border-radius: 10px;
+	overflow: auto;
+}
+
+.container-1{
+	width:60%;
+	display: inline-block;
+}
+
+/* this is the side navigation */
+.container-2{
+	display: inline-block;
+	width: 17%;
+	min-width: 50px;
+	position: fixed;
+	top: 33%;
+	right: 10%;
+	background-color: #bdbdbd;
+}
+
+.container-2 a{
+	display: block;
+	color: white;
+	padding: 10px;
+	margin: 0px;
+	border-bottom: 2px solid white;
+}
+
+.container-2 a:hover{
+	color: #cc8400;
+	padding: 20px 10px;
+	background-color: white;
+	transition-duration: 0.2s;
+	border: 1px solid grey;
+}
+
+/* prerequisite */
+.prerequisite{
+	padding: 20px;
+	box-shadow: 1px 1px 2px grey;
+}
+
+.prerequisite:hover{
+	box-shadow: 2px 2px 2px grey;
+	transition-duration: 0.2s;
+}
+
+
+/* ASIDE CONTAINER*/
+#profile_pic {
+	width: 400px;
+	height: auto;
+	margin-left: 15%;
+}
+
+/* RECENT POSTS*/
+.recent-posts{
+	display: inline-block;
+	width: 30%;
+	min-width: 200px;
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 1px 1px 2px grey;
+	transition-duration: 0.2s;
+}
+
+.recent-posts:nth-child(1){
+	margin-left: 0px;
+}
+
+.recent-posts:nth-child(3){
+	margin-right: 0px;
+}
+
+.recent-posts img{
+	width: 100px;
+	height: auto;
+}
+
+.recent-posts:hover{
+	box-shadow: 3px 3px 3px grey;
+}
+
+/* FOOTER */
+footer {
+	background-color: #232f2f;
+	min-height: 140px;
+	margin-top: -140px;
+	border-top: 1px solid black;
+	position: relative;
+	bottom: 0px;
+	width: 100%;
+	clear: both;
+	color: #ffffff;
+}
+
+footer h4{
+	color: #ffffff;
+}
+
+footer a{
+	display: block;
+	color: #ffffff;
+	padding: 2.5px;
+}
+
+.bottom_foot_left{
+	display: inline-block;
+	width: 30%;
+	min-width: 200px;
+	margin-left: 13%;
+	margin-right: 5%;
+}
+
+/* TOOLS */
+
+/* Merge words */
+textarea {
+	width: 30%;
+	min-width: 200px;
+	height: 200px;
+	margin: 20px 10px;
+	font-size: 16px;
+	background-color: rgba(0,0,0,0.2);
+	color: black;
+}
+
+textarea:focus{
+	background-color: rgba(0,0,0,0.1);
+}
+
+#merge-words{
+	display: block;
+	margin: 40px auto;
+	padding: 10px;
+	min-width: 400px;
+	width: 100px;
+	font-size: 20px;
+	background-color: #cc8400;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px grey;
+	text-align: center;
+}
+
+
+#merge-words:hover{
+	background-color: white;
+	color: #cc8400;
+	cursor: pointer;
+}
+#merge-output{
+	display: block;
+	margin: 50px auto;
+	width: 40%;
+}
+
+.merge_content{
+	margin-top: 100px;
+}
+
+/* Web crawling */
+#crawl_area{
+	width: 98%;
+	display: block;
+	min-width: 200px;
+	padding: 10px;
+	margin: 10px 10px 10px 0px;
+	border-radius: 10px;
+	background-color: rgba(0,0,0,0.2);
+	color: black;
+	font-size: 18px;
+}
+
+#crawl_area:hover{
+	background-color: rgba(0,0,0,0.1);
+	color: black;
+}
+
+#crawl_button{
+	padding: 10px;
+	width: 98%;
+	display: block;
+	min-width: 200px;
+	background-color: #cc8400;
+	margin: 10px 10px 30px 0px;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 18px
+}
+
+#crawl_button:hover{
+	background-color: white;
+	color: #cc8400;
+	cursor: pointer;
+}
+
+/* Rank tracker */
+
+table{
+	width: 100%;
+	
+}
+
+th {
+	background-color: rgba(0,0,0,0.4);
+	color: white;
+	padding: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom: 3px solid rgba(0,0,0,0.2);
+}
+
+th:hover{
+	background-color: rgba(0,0,0,0.4);
+}
+
+td {
+	background-color: rgba(0,0,0,0.3);
+	color: black;
+	padding: 5px;
+}
+
+td:hover {
+	background-color: rgba(0,0,0,0.1);
+}
+
+
+/* CANNIBALISATION TOOL */
+.canni{
+	width: 100%;
+	min-width: 400px;
+	margin-left: 0px;
+}

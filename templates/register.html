@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% block content %}	
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<div class="registration-signin">
+		<h1>Register</h1>
+		
+		<form method="post" onsubmit="return match_pass()">
+			<p>Enter username:</p>
+			<input type="text" name="username" id="username" required></input>
+			<p>Enter email:</p>
+			<input type="email" name="email" id="email" required></input>
+			<p>Enter password:</p>
+			<input type="password" name="password" id="password1" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="must contain one uppercase, one lowercase and one letter" required></input>
+			<p>Re enter password:</p>
+			<input type="password" id="password2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required></input>
+			<p id="fail" style="color: red;"></p>
+			<input type="submit" value="Register">
+			
+		</form>
+	</div>
+	<script>
+		function match_pass(){
+			var pass1 = document.getElementById("password1").value;
+			var pass2 = document.getElementById("password2").value;
+			var ok = true;
+			if (pass1 != pass2) {
+				document.getElementById("fail").innerHTML = "Please make sure passwords are matching";
+				ok = false;
+			}
+			else{
+				ok = true;
+			}
+			return ok;
+			}
+	</script>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block content %}
+	<ul class="second_nav">
+		<li><a href="#faq1"># What is SEO cannibalisation</a></li> 
+		<li><a href="#faq2"># How to use SEO cannibalisation</a></li>
+	</ul>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+			<h1>SEO cannibalisation</h1>
+			<p>Enter keywords and URLs such as<strong> football;https://www.bbc.co.uk/sport/football</strong></p>
+			<form method="post">
+				<textarea class="canni" rows="10" cols="40" placeholder="Enter keywords and URL" name="canni" style="display:block;"></textarea>
+				<input type="text" name="brand" placeholder="Enter brand name">
+				<input type="submit" value="Find cannibalisation!">
+				<h3>Cannibalisation</h3>
+				<textarea class="canni" rows="10" cols="40" placeholder="Output is here" >{% if cannibalisation %}{% for canni in cannibalisation %}{{canni}}{% endfor %}{% endif %}</textarea>
+			</form>
+	<div class="merge_content">
+		<h2 id="faq1">Whats is SEO cannibalisation</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+		<h2 id="faq2">How to use SEO cannibalisation</h2>
+		<p>Lorem ipsum dolor sit amet, mei ut prima forensibus, vel ei facer denique reformidans. Alia alterum pri ex. Etiam similique duo ea, has ei unum mazim numquam, vis at viderer partiendo. Dicta alienum facilisi per ad, nam quot ubique persecuti ad, ea posse epicurei efficiendi vix. Choro tation utamur an has, porro erant latine ea ius, ei putent graecis fuisset vim. Pro ad elit simul tantas.</p>
+	</div>
+
+
+{% endblock %}
